@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 
+import { RegistrationView } from '../registration-view/registration-view';
+
 export function LoginView(props) {
   const [ username, setUsername ] = useState('');
   const [ password, setPassword ] = useState('');
