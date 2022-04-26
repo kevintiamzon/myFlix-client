@@ -26830,7 +26830,7 @@ class MovieView extends _reactDefault.default.Component {
                     __self: this,
                     children: [
                         /*#__PURE__*/ _jsxRuntime.jsx("span", {
-                            classname: "label",
+                            className: "label",
                             __source: {
                                 fileName: "src/components/movie-view/view-movie.jsx",
                                 lineNumber: 22
@@ -26839,7 +26839,7 @@ class MovieView extends _reactDefault.default.Component {
                             children: "Director: "
                         }),
                         /*#__PURE__*/ _jsxRuntime.jsx("span", {
-                            classname: "value",
+                            className: "value",
                             __source: {
                                 fileName: "src/components/movie-view/view-movie.jsx",
                                 lineNumber: 23
@@ -26850,7 +26850,7 @@ class MovieView extends _reactDefault.default.Component {
                     ]
                 }),
                 /*#__PURE__*/ _jsxRuntime.jsxs("div", {
-                    classname: "movie-genre",
+                    className: "movie-genre",
                     __source: {
                         fileName: "src/components/movie-view/view-movie.jsx",
                         lineNumber: 25
@@ -26858,7 +26858,7 @@ class MovieView extends _reactDefault.default.Component {
                     __self: this,
                     children: [
                         /*#__PURE__*/ _jsxRuntime.jsx("span", {
-                            classname: "label",
+                            className: "label",
                             __source: {
                                 fileName: "src/components/movie-view/view-movie.jsx",
                                 lineNumber: 26
@@ -26867,7 +26867,7 @@ class MovieView extends _reactDefault.default.Component {
                             children: " Genre: "
                         }),
                         /*#__PURE__*/ _jsxRuntime.jsx("span", {
-                            classname: "value",
+                            className: "value",
                             __source: {
                                 fileName: "src/components/movie-view/view-movie.jsx",
                                 lineNumber: 27
