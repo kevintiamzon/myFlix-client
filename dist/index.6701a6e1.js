@@ -27135,8 +27135,8 @@ function LoginView(props) {
                 children: "Submit"
             }),
             /*#__PURE__*/ _jsxRuntime.jsx("button", {
-                type: "register",
-                onClick: handleRegister,
+                type: "submit",
+                onClick: handleSubmit,
                 __source: {
                     fileName: "src/components/login-view/login-view.jsx",
                     lineNumber: 28
@@ -27180,7 +27180,7 @@ function RegistrationView(props) {
     const [password, setPassword] = _react.useState('');
     const [email, setEmail] = _react.useState('');
     const [birthday, setBirthday] = _react.useState('');
-    const handleRegister = (e)=>{
+    const handleSubmit = (e)=>{
         e.preventDefault();
         console.log(username, password, email, birthday);
         /* Send a request to server for authentication */ /* Then call props.onRegister(username) */ props.onRegister(username);
