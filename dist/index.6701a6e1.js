@@ -27277,8 +27277,8 @@ function RegistrationView(props) {
                 ]
             }),
             /*#__PURE__*/ _jsxRuntime.jsx("button", {
-                type: "register",
-                onClick: handleRegister,
+                type: "submit",
+                onClick: handleSubmit,
                 __source: {
                     fileName: "src/components/registration-view/registration-view.jsx",
                     lineNumber: 37
