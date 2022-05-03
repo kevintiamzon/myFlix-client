@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import { Form, Button, FormControl } from 'react-bootstrap';
 
 export function RegistrationView(props) {
   const [ username, setUsername ] = useState('');
@@ -17,25 +18,49 @@ export function RegistrationView(props) {
   };
 
   return (
-    <form>
-      <label>
-        Select a Username:
-        <input type="text" value={username} onChange={e => setUsername(e.target.value)} />
-      </label>
-      <label>
-        Set Your Password:
-        <input type="text" value={password} onChange={e => setPassword(e.target.value)} />
-      </label>
-      <label>
-        Your Email:
-        <input type="text" value={email} onChange={e => setEmail(e.target.value)} />
-      </label>
-      <label>
-        Your Birthday:
-        <input type="text" value={birthday} onChange={e => setBirthday(e.target.value)} />
-      </label>
-      <button type="submit" onClick={handleSubmit}>Register</button>
-    </form>
+    <Form>
+      <Form.Group>
+        <Form.Label>Select a Username:</Form.Label>
+        <Form.Control
+        type="text"
+        value={username}
+        onChange={e => setUsername(e.target.value)}
+        required
+        placeholder="Select a username"
+        />
+      </Form.Group>
+      <Form.Group>
+        <Form.Label>Set Your Password:</Form.Label>
+        <Form.Control
+        type="text"
+        value={password}
+        onChange={e => setPassword(e.target.value)}
+        required
+        minLength="8"
+        />
+      </Form.Group>
+      <Form.Group>
+        <Form.Label>Your Email:</Form.Label>
+        <Form.Control
+        type="text"
+        value={email}
+        onChange={e => setEmail(e.target.value)}
+        required
+        placeholder="Enter Your Email"
+        />
+      </Form.Group>
+      <Form.Group>
+        <Form.Label>Your Birthday:</Form.Label>
+        <Form.Control
+        type="text"
+        value={birthday}
+        onChange={e => setBirthday(e.target.value)}
+        required
+        placeholder="Enter Your Birthday"
+        />
+      </Form.Group>
+      <Button type="submit" onClick={handleSubmit}>Sign Me Up!</Button>
+    </Form>
   );
 }
 
