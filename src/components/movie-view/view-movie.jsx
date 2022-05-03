@@ -1,5 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card';
+import ListGroup from 'react-bootstrap/ListGroup';
+import { ListGroupItem } from 'react-bootstrap';
 
 export class MovieView extends React.Component {
 
@@ -7,28 +11,23 @@ export class MovieView extends React.Component {
     const { movie, onBackClick } = this.props;
 
     return (
-      <div className="movie-view">
-        <div className="movie-poster">
-          <img src={movie.ImagePath} />
-        </div>
-        <div className="movie-title">
-          <span className="label">Title: </span>
-          <span className="value">{movie.Title}</span>
-        </div>
-        <div className="movie-description">
+      <Card style={{ width: '18rem' }}>
+      <Card.Img variant="top" src={movie.ImagePath} />
+      <Card.Body>
+        <Card.Title>{movie.Title}</Card.Title>
+        <Card.Text>
           <span className="label">Description: </span>
           <span className="value">{movie.Description}</span>
-        </div>
-        <div classname="movie-director">
-          <span className="label">Director: </span>
-          <span className="value">{movie.Director.Name}</span>
-        </div>
-        <div className="movie-genre">
-          <span className="label"> Genre: </span>
-          <span className="value">{movie.Genre.Name}</span>
-        </div>
-        <button onClick={() => { onBackClick(null); }}>Back</button>
-      </div>
+        </Card.Text>
+      </Card.Body>
+      <ListGroup classname="list-group-flush">
+          <ListGroupItem >Director: {movie.Director.Name}</ListGroupItem>
+          <ListGroupItem> Genre: {movie.Genre.Name}</ListGroupItem>
+      </ListGroup>
+      <Card.Body>
+        <Button onClick={() => { onBackClick(null); }}>Back</Button>
+      </Card.Body>
+      </Card>
     );
   }
 }
