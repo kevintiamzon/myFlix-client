@@ -5,10 +5,12 @@ import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
 import { ListGroupItem } from 'react-bootstrap';
 
+import { Link } from "react-router-dom";
+
 export class MovieView extends React.Component {
 
   render() {
-    const { movie, onBackClick } = this.props;
+    const { movie } = this.props;
 
     return (
       <Card style={{ width: '18rem' }}>
@@ -25,7 +27,12 @@ export class MovieView extends React.Component {
           <ListGroupItem> Genre: {movie.Genre.Name}</ListGroupItem>
       </ListGroup>
       <Card.Body>
-        <Button onClick={() => { onBackClick(null); }}>Back</Button>
+        <Link to={'/directors/${movie.Director.Name}'}>
+          <Button variant="link">Director</Button>
+        </Link>
+        <Link to={'genres/${movie.Genre.Name}'}>
+          <Button variant="link">Genre</Button>
+        </Link>
       </Card.Body>
       </Card>
     );
