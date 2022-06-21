@@ -9,6 +9,9 @@ import { MovieView } from '../movie-view/view-movie';
 import { RegistrationView } from '../registration-view/registration-view';
 import { GenreView } from '../genre-view/genre-view';
 import { DirectorView } from '../director-view/director-view';
+import { ProfileView } from '../profile-view/profile-view';
+import { GenreView } from '../genre-view/genre-view';
+import { FavoriteMovies } from '../profile-view/favorites';
 
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -20,7 +23,6 @@ export class MainView extends React.Component {
     super();
     this.state = {
       movies: [],
-      selectedMovie: null,
       user: null
     };
   }
@@ -73,8 +75,16 @@ to that *particular user*/
     this.getMovies(authData.token);
   }
 
+  onLoggedOut() {
+    localStorage.removeItem('token');
+    localStorage.removeItem('user');
+    this.setState({
+      user: null,
+    });
+  }
+
   render() {
-    const { movies, selectedMovie, user } = this.state;
+    const { movies, user } = this.state;
 
     return (
     <Router>
@@ -98,6 +108,13 @@ to that *particular user*/
           <RegistrationView />
           </Col>
         }} />
+        <Route exact path ="/movies" render={() => {
+          return movies.map((m) => (
+            <Col md={3} key={m._id}>
+              <MovieCard movie={m} />
+            </Col>
+          ));
+        }} />
         <Route exact path="/movies/:movieId" render={({ match, history }) => {
           return <Col md={8}>
             <MovieView movie={movies.find(m => m.id === match.params.movieId)} onBackClick={() => history.goBack()} />
@@ -114,6 +131,19 @@ to that *particular user*/
           return <Col md={8}>
             <DirectorView director={movies.find(m => m.Director.Name === match.params.name).Director} onBackClick={() => history.goBack()} />
           </Col>
+        }} />
+        <Route path={'/users/:username'} render={({ history }) => {
+          if (!user) return (
+            <Col>
+            <LoginView onLoggedIn={(user) => this.onLoggedIn(user)} />
+            </Col>
+          );
+          if (movies.length === 0) return <div className='mainview' />;
+          return (
+            <Col md={8}>
+              <ProfileView movies={movies} user={user} onBackClick={() => history.goBack()} />
+            </Col>
+          );
         }} />
       </Row>
     </Router>
