@@ -76,36 +76,27 @@ to that *particular user*/
   render() {
     const { movies, selectedMovie, user } = this.state;
 
-    /* If there is no user, the LoginView is rendered. If there is a user logged in, the
-    user details are *passed as a prop to the LoginView*/
-
-    if (!user) return <Row>
-      <Col>
-        <LoginView onLoggedIn={user => this.onLoggedIn(user)} />;
-      </Col>
-      </Row>
-    // Before the movies have been loaded
-    if (movies.length === 0) return <div className="main-view" />;
-
     return (
     <Router>
       <Row className="main-view justify-content-md-center">
         {/*If the state of 'selectedMovie' is not null, that selected movie will be returned
         otherwise, all *movies will be returned*/}
         <Route exact path="/" render={() => {
+          if (!user) return <Col>
+          <LoginView onLoggedIn={user => this.onLoggedIn(user)} />
+          </Col>
+          if (movies.length === 0) return <div className="main-view" />;
           return movies.map(m => (
             <Col md={3} key={m._id}>
               <MovieCard movie={m} />
             </Col>
           ))
         }} />
-        <Route exact path="/register" render={() => {
-          if (user) return <Redirect to="/" />;
-          return (
-            <Col>
-            <RegistrationView />
-            </Col>
-          );
+        <Route path="/register" render={() => {
+          if (user) return <Redirect to="/" />
+          return <Col>
+          <RegistrationView />
+          </Col>
         }} />
         <Route exact path="/movies/:movieId" render={({ match, history }) => {
           return <Col md={8}>
