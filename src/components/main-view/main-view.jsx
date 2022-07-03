@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 import { LoginView } from '../login-view/login-view';
 import { MovieCard } from '../movie-card/movie-card';
@@ -91,9 +91,10 @@ to that *particular user*/
       <Row className="main-view justify-content-md-center">
         {/*If the state of 'selectedMovie' is not null, that selected movie will be returned
         otherwise, all *movies will be returned*/}
+        <Routes>
         <Route exact path="/" render={() => {
           if (!user) return <Col>
-          <LoginView onLoggedIn={user => this.onLoggedIn(user)} />
+          <LoginView onLoggedIn={(user) => this.onLoggedIn(user)} />
           </Col>
           if (movies.length === 0) return <div className="main-view" />;
           return movies.map(m => (
@@ -145,6 +146,7 @@ to that *particular user*/
             </Col>
           );
         }} />
+        </Routes>
       </Row>
     </Router>
     );
