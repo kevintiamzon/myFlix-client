@@ -35336,7 +35336,7 @@ function ProfileView(props) {
             setEmail(response.data.Email);
             setFavoriteMovies(response.data.favoriteMovies);
             console.log(response.data);
-        }).catch((error)=>console.error("Error" = +error));
+        }).catch((error)=>console.error("Error" + error));
     };
     const updateUser = ()=>{
         (0, _axiosDefault.default).put("https://kevins-movie-api.herokuapp.com/users/${currentUser}", {

@@ -31,10 +31,10 @@ export class MainView extends React.Component {
     axios.get('https://kevins-movie-api.herokuapp.com/movies', {
       headers: { Authorization: 'Bearer ${token}'}
     })
-    .then(response => {
+    .then((response) => {
       // Assign the result to the state
       this.setState({
-        movies: response.data
+        movies: response.data,
       });
     })
     .catch(function (error) {
