@@ -27194,7 +27194,7 @@ to that *particular user*/ onLoggedIn(authData) {
                             }
                         }, void 0, false, {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 106,
+                            lineNumber: 108,
                             columnNumber: 9
                         }, this),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
@@ -27210,7 +27210,7 @@ to that *particular user*/ onLoggedIn(authData) {
                             }
                         }, void 0, false, {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 112,
+                            lineNumber: 116,
                             columnNumber: 9
                         }, this),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
@@ -27227,7 +27227,7 @@ to that *particular user*/ onLoggedIn(authData) {
                             }
                         }, void 0, false, {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 119,
+                            lineNumber: 123,
                             columnNumber: 9
                         }, this),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
@@ -27247,7 +27247,7 @@ to that *particular user*/ onLoggedIn(authData) {
                             }
                         }, void 0, false, {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 124,
+                            lineNumber: 130,
                             columnNumber: 9
                         }, this),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
@@ -27267,7 +27267,7 @@ to that *particular user*/ onLoggedIn(authData) {
                             }
                         }, void 0, false, {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 130,
+                            lineNumber: 138,
                             columnNumber: 9
                         }, this),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
@@ -27292,7 +27292,7 @@ to that *particular user*/ onLoggedIn(authData) {
                             }
                         }, void 0, false, {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 136,
+                            lineNumber: 146,
                             columnNumber: 9
                         }, this)
                     ]

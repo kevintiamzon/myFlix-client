@@ -93,21 +93,25 @@ to that *particular user*/
         otherwise, all *movies will be returned*/}
         <Routes>
         <Route exact path="/" render={() => {
-          if (!user) return <Col>
+          if (!user) return ( 
+          <Col>
           <LoginView onLoggedIn={(user) => this.onLoggedIn(user)} />
           </Col>
+          );
           if (movies.length === 0) return <div className="main-view" />;
-          return movies.map(m => (
+          return movies.map((m) => (
             <Col md={3} key={m._id}>
               <MovieCard movie={m} />
             </Col>
-          ))
+          ));
         }} />
         <Route path="/register" render={() => {
           if (user) return <Redirect to="/" />
-          return <Col>
+          return (
+          <Col>
           <RegistrationView />
           </Col>
+          );
         }} />
         <Route exact path ="/movies" render={() => {
           return movies.map((m) => (
@@ -117,21 +121,27 @@ to that *particular user*/
           ));
         }} />
         <Route exact path="/movies/:movieId" render={({ match, history }) => {
-          return <Col md={8}>
+          return (
+          <Col md={8}>
             <MovieView movie={movies.find(m => m.id === match.params.movieId)} onBackClick={() => history.goBack()} />
           </Col>
+          );
         }} />
         <Route exact path="/genres/:name" render={({ match, history }) => {
           if (movies.length === 0) return <div className="main-view" />;
-          return <Col md={8}>
+          return (
+          <Col md={8}>
             <GenreView genre={movies.find(m => m.Genre.name === match.params.name).Genre} onBackClick={() => history.goBack()} />
           </Col>
+          );
         }} />
         <Route exact path="directors/:name" render={({ match }) => {
           if (movies.length === 0) return <div className="main-view" />;
-          return <Col md={8}>
+          return (
+          <Col md={8}>
             <DirectorView director={movies.find(m => m.Director.Name === match.params.name).Director} onBackClick={() => history.goBack()} />
           </Col>
+          );
         }} />
         <Route path={'/users/:username'} render={({ history }) => {
           if (!user) return (
